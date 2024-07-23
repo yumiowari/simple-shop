@@ -21,7 +21,7 @@ class View:
         self.__menu = tk.Menu(self.root)
         
         self.__app_menu = tk.Menu(self.__menu, tearoff = 0)
-        self.__app_menu.add_command(label = 'Preferências')
+        self.__app_menu.add_command(label = 'Preferências', command = self.open_settings)
         self.__app_menu.add_separator()
         self.__app_menu.add_command(label = 'Sair', command = self.safe_exit)
 
@@ -48,4 +48,9 @@ class View:
             self.__controller.safe_exit()
 
             self.root.destroy()
+    #
+
+    # inicia a janela de preferências
+    def open_settings(self):
+        self.__controller.open_settings(self.root)
     #
