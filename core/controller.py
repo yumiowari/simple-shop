@@ -1,7 +1,7 @@
 from core.model import Model
 from core.view import View
 
-from core.settings.controller import Controller as ctrlSettings
+from core.settings.controller import Controller as CtrlSettings
 
 class Controller:
     def __init__(self):
@@ -15,5 +15,5 @@ class Controller:
 
     # inicia a janela de preferências
     def open_settings(self, root):
-        ctrlSettings.make_window(self, root)
+        self.__ctrlSettings = CtrlSettings(root)
     #
