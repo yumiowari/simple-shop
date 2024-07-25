@@ -70,6 +70,13 @@ class View:
         acc_psswd = self.acc_psswd.get()
 
         if messagebox.askyesno(title = 'Confirmação', message = 'Deseja atualizar os dados de login no banco de dados?', icon = 'warning'):
-            self.__controller.update_acc(acc_name, acc_psswd)
+            if acc_name == '' and acc_psswd != '':
+                messagebox.showerror('Falha', 'Um nome de usuário precisa ser informado.')
+            elif acc_psswd == '' and acc_name != '':
+                messagebox.showerror('Falha', 'Uma senha precisa ser informada.')
+            elif acc_name == '' and acc_psswd == '':
+                messagebox.showerror('Falha', 'As credenciais de login precisam ser informadas.')
+            else:
+                self.__controller.update_acc(acc_name, acc_psswd)
 
-            messagebox.showinfo('Sucesso', 'As credenciais de login foram atualizadas.')
+                messagebox.showinfo('Sucesso', 'As credenciais de login foram atualizadas.')
