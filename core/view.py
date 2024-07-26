@@ -62,7 +62,7 @@ class View:
         root = tk.Toplevel(self.root)
 
         root.title("Créditos")
-        root.minsize(200, 150)
+        #root.minsize(200, 150)
         root.resizable(False, False)
 
         top = tk.Frame(root)
